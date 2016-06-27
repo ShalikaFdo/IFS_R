@@ -1,0 +1,35 @@
+﻿<?xml version="1.0"?>
+<configuration date="2015/11/14" author="e.World Technology Ltd.">
+<project id="{7F37EE0F-BC09-413F-9B82-414FB739A1E5}" file="C:\Users\Shalika Fernando\Downloads\phprpt8demo\demo8.prp" name="demo8" product="PHPReportMaker" version="8.1" datetime="2015/11/14 18:09:29" languagefolder="phprptlang" userlevel="0,&quot;Default&quot;,0">
+<table id="cars" name="cars" caption="cars" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="cars_2" name="cars 2" caption="cars 2" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="categories" name="categories" caption="categories" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="connectors2" name="connectors2" caption="connectors 2" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="customers" name="customers" caption="customers" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="dji" name="dji" caption="dji" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="emaillog" name="emaillog" caption="emaillog" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="employee_sales_by_county_for_1997" name="employee_sales_by_county_for_1997" caption="employee sales by county for 1997" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="employees" name="employees" caption="employees" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="_gantt" name="gantt" caption="gantt" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="list_of_products" name="list_of_products" caption="list of products" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="milestones2" name="milestones2" caption="milestones 2" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="models" name="models" caption="models" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="order_details_extended" name="order details extended" caption="order details extended" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="order_details_extended_2" name="order details extended 2" caption="order details extended 2" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="orderdetails" name="orderdetails" caption="orderdetails" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="orders" name="orders" caption="orders" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="orders_by_product" name="orders_by_product" caption="orders by product" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="processes2" name="processes2" caption="processes 2" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="product_sales_for_1997" name="product_sales_for_1997" caption="product sales for 1997" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="products" name="products" caption="products" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="products_by_category" name="products_by_category" caption="products by category" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="sales_by_category_for_1997" name="sales_by_category_for_1997" caption="sales by category for 1997" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="sales_by_year" name="sales_by_year" caption="sales by year" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="shippers" name="shippers" caption="shippers" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="suppliers" name="suppliers" caption="suppliers" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="tasks2" name="tasks2" caption="tasks 2" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="trademarks" name="trademarks" caption="trademarks" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="trendlines2" name="trendlines2" caption="trendlines 2" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="userlevelpermissions" name="userlevelpermissions" caption="userlevelpermissions" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+<table id="userlevels" name="userlevels" caption="userlevels" userlevel="0,&quot;Default&quot;,0" priv="1"/>
+</project></configuration>

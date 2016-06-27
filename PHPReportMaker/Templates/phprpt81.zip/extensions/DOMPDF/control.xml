@@ -1,0 +1,143 @@
+<?xml version="1.0" standalone="yes"?>
+<phpreportmaker.dompdf date="2015/01/05" version="8.0.1" desc="DOMPDF template" author="e.World Technology Ltd.">
+
+	<!--
+		Common functions for extension
+	-->
+	<control id="dompdfcommon" type="function" action="add" ifiles="dompdf-common.js" />
+
+	<!--
+		copy all dompdf files
+	-->
+	<control id="dompdf" type="copy" action="add"
+			ofolder="dompdf061"
+			ifolder="dompdf061"/>
+
+	<!--
+		copy TCPDF dompdf files
+	-->
+	<control id="dompdf_tcpdf" type="copy" action="add"
+			ofolder="dompdf061"
+			ifolder="dompdf_tcpdf"
+			cond="function/UseTCPDF/Boolean/EQ/True" />
+
+	<!--
+		copy TCPDF font files as required
+	-->
+	<!-- AlMohanad -->
+	<control id="dompdf_tcpdf_font_almohanad" type="copy" action="add"
+			ofolder="dompdf061/lib/tcpdf/fonts"
+			ifolder="dompdf_tcpdf_fonts/AlMohanad"
+			cond="function/UseTCPDF/Boolean/EQ/True,function/PdfFont/String/EQ/AlMohanad" />
+	<!-- ArialUnicodeMS -->
+	<control id="dompdf_tcpdf_font_arialunicodems" type="copy" action="add"
+			ofolder="dompdf061/lib/tcpdf/fonts"
+			ifolder="dompdf_tcpdf_fonts/ArialUnicodeMS"
+			cond="function/UseTCPDF/Boolean/EQ/True,function/PdfFont/String/EQ/ArialUnicodeMS" />
+	<!-- DejaVuSans -->
+	<control id="dompdf_tcpdf_font_dejavusans" type="copy" action="add"
+			ofolder="dompdf061/lib/tcpdf/fonts"
+			ifolder="dompdf_tcpdf_fonts/DejaVuSans"
+			cond="function/UseTCPDF/Boolean/EQ/True,function/PdfFont/String/EQ/DejaVuSans" />
+	<!-- DejaVuSansCondensed -->
+	<control id="dompdf_tcpdf_font_dejavusanscondensed" type="copy" action="add"
+			ofolder="dompdf061/lib/tcpdf/fonts"
+			ifolder="dompdf_tcpdf_fonts/DejaVuSansCondensed"
+			cond="function/UseTCPDF/Boolean/EQ/True,function/PdfFont/String/EQ/DejaVuSansCondensed" />
+	<!-- DejaVuSansMono -->
+	<control id="dompdf_tcpdf_font_dejavusansmono" type="copy" action="add"
+			ofolder="dompdf061/lib/tcpdf/fonts"
+			ifolder="dompdf_tcpdf_fonts/DejaVuSansMono"
+			cond="function/UseTCPDF/Boolean/EQ/True,function/PdfFont/String/EQ/DejaVuSansMono" />
+	<!-- DejaVuSerif -->
+	<control id="dompdf_tcpdf_font_dejavuserif" type="copy" action="add"
+			ofolder="dompdf061/lib/tcpdf/fonts"
+			ifolder="dompdf_tcpdf_fonts/DejaVuSerif"
+			cond="function/UseTCPDF/Boolean/EQ/True,function/PdfFont/String/EQ/DejaVuSerif" />
+	<!-- DejaVuSerifCondensed -->
+	<control id="dompdf_tcpdf_font_dejavuserifcondensed" type="copy" action="add"
+			ofolder="dompdf061/lib/tcpdf/fonts"
+			ifolder="dompdf_tcpdf_fonts/DejaVuSerifCondensed"
+			cond="function/UseTCPDF/Boolean/EQ/True,function/PdfFont/String/EQ/DejaVuSerifCondensed" />
+	<!-- FreeMono -->
+	<control id="dompdf_tcpdf_font_freemono" type="copy" action="add"
+			ofolder="dompdf061/lib/tcpdf/fonts"
+			ifolder="dompdf_tcpdf_fonts/FreeMono"
+			cond="function/UseTCPDF/Boolean/EQ/True,function/PdfFont/String/EQ/FreeMono" />
+	<!-- FreeSans -->
+	<control id="dompdf_tcpdf_font_freesans" type="copy" action="add"
+			ofolder="dompdf061/lib/tcpdf/fonts"
+			ifolder="dompdf_tcpdf_fonts/FreeSans"
+			cond="function/UseTCPDF/Boolean/EQ/True,function/PdfFont/String/EQ/FreeSans" />
+	<!-- FreeSerif -->
+	<control id="dompdf_tcpdf_font_freeserif" type="copy" action="add"
+			ofolder="dompdf061/lib/tcpdf/fonts"
+			ifolder="dompdf_tcpdf_fonts/FreeSerif"
+			cond="function/UseTCPDF/Boolean/EQ/True,function/PdfFont/String/EQ/FreeSerif" />
+
+	<!--
+		dompdf config file
+	-->
+	<control id="dompdf_config.inc.php" type="other" action="add"
+			ifiles="dompdf_config.inc.php"
+			ofolder="dompdf061"
+			ofile="dompdf_config.inc" oext="php">
+			<session type="key" value="dompdf_config" />
+	</control>
+
+	<!--
+		Update Global configuration file
+	-->
+	<control id="rptconfig" type="other" action="change">
+		<!-- add pdf config -->
+		<session type="key" value="ewconfigpdf" action="change"
+				ifile="rpt-pdf-config.php"/>
+	</control>
+
+	<!--
+		PDF CSS
+	-->
+	<control id="rptpdf.css" type="other" action="add"
+			ifiles="rpt-pdf.css"
+			ofolderid="_css"
+			ofile="ewrpdf" oext="css">
+			<session type="key" value="pdfcss" />
+	</control>
+
+	<!-- simple report -->
+	<control id="rpt" type="table" action="change">
+		<!-- config -->
+		<session type="key" value="report_pdf_config" action="add"
+				location="phpconfig" loctype="after"
+				ifile="rpt-pdf.php"/>
+		<!-- show link -->
+		<session type="key" value="report_pdf_link" action="add"
+				location="setupexportoptionsext-start" loctype="after"
+				ifile="rpt-pdf.php"/>
+	</control>
+
+	<!-- summary report -->
+	<control id="summary" type="report" action="change">
+		<!-- config -->
+		<session type="key" value="report_pdf_config" action="add"
+				location="phpconfig" loctype="after"
+				ifile="rpt-pdf.php"/>
+		<!-- show link -->
+		<session type="key" value="report_pdf_link" action="add"
+				location="setupexportoptionsext-start" loctype="after"
+				ifile="rpt-pdf.php"/>
+	</control>
+
+	<!-- crosstab report -->
+	<control id="crosstab" type="report" action="change">
+		<!-- config -->
+		<session type="key" value="report_pdf_config" action="add"
+				location="phpconfig" loctype="after"
+				ifile="rpt-pdf.php"/>
+		<!-- show link -->
+		<session type="key" value="report_pdf_link" action="add"
+				location="setupexportoptionsext-start" loctype="after"
+				ifile="rpt-pdf.php"/>
+	</control>
+
+</phpreportmaker.dompdf>

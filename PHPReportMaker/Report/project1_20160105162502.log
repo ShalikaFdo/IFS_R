@@ -1,0 +1,113 @@
+﻿# Software: PHP Report Maker
+# Version: 9.0
+# Date: 2016-01-05 16:25:02
+
+#
+# config
+#
+ADDED   : (TABLE) config
+ADDED   : (Field) config->thresholdID
+ADDED   : (Field) config->years
+
+#
+# criteria
+#
+ADDED   : (TABLE) criteria
+ADDED   : (Field) criteria->criteriaID
+ADDED   : (Field) criteria->criteriaName
+
+#
+# criteria1_3
+#
+ADDED   : (TABLE) criteria1_3
+ADDED   : (Field) criteria1_3->CandID
+ADDED   : (Field) criteria1_3->MarkID
+ADDED   : (Field) criteria1_3->gpa
+ADDED   : (Field) criteria1_3->projects
+ADDED   : (Field) criteria1_3->softskills
+
+#
+# designation
+#
+ADDED   : (TABLE) designation
+ADDED   : (Field) designation->DesigID
+ADDED   : (Field) designation->Designation
+
+#
+# employee
+#
+ADDED   : (Field) employee->Designation
+
+#
+# evaluation
+#
+ADDED   : (TABLE) evaluation
+ADDED   : (Field) evaluation->criteriaID
+ADDED   : (Field) evaluation->evalID
+ADDED   : (Field) evaluation->evalName
+ADDED   : (Field) evaluation->evalWeight
+
+#
+# interview
+#
+CHANGED : (Field) interview->EvaCriID - Changed type from 253 to 3
+ADDED   : (Field) interview->duration
+
+#
+# interviewpanel
+#
+ADDED   : (Field) interviewpanel->IntPanName
+
+#
+# interviewpanelmember
+#
+CHANGED : (Field) interviewpanelmember->EmpID - Changed type from 3 to 253
+
+#
+# jobpositionvsinterviews
+#
+ADDED   : (VIEW) jobpositionvsinterviews
+ADDED   : (Field) jobpositionvsinterviews->Number_Of_Interviews
+ADDED   : (Field) jobpositionvsinterviews->dateCreated
+ADDED   : (Field) jobpositionvsinterviews->jbName
+
+#
+# jobpositionvsjoboffered
+#
+ADDED   : (VIEW) jobpositionvsjoboffered
+ADDED   : (Field) jobpositionvsjoboffered->Job_Name
+ADDED   : (Field) jobpositionvsjoboffered->Job_Offered_Candidates
+ADDED   : (Field) jobpositionvsjoboffered->dateCreated
+
+#
+# jobpositionvsrejected
+#
+ADDED   : (VIEW) jobpositionvsrejected
+ADDED   : (Field) jobpositionvsrejected->Rejected_Candidates
+ADDED   : (Field) jobpositionvsrejected->dateCreated
+ADDED   : (Field) jobpositionvsrejected->jbName
+
+#
+# login
+#
+ADDED   : (TABLE) login
+ADDED   : (Field) login->password
+ADDED   : (Field) login->type
+ADDED   : (Field) login->username
+ADDED   : (Field) login->usrid
+
+#
+# universityvsjobofferedcandidates
+#
+ADDED   : (VIEW) universityvsjobofferedcandidates
+ADDED   : (Field) universityvsjobofferedcandidates->Job_Offered_Candidates
+ADDED   : (Field) universityvsjobofferedcandidates->University
+ADDED   : (Field) universityvsjobofferedcandidates->dateCreated
+
+#
+# universityvsrejectedcandidates
+#
+ADDED   : (VIEW) universityvsrejectedcandidates
+ADDED   : (Field) universityvsrejectedcandidates->COUNT(candidate.candStatusID)
+ADDED   : (Field) universityvsrejectedcandidates->University
+ADDED   : (Field) universityvsrejectedcandidates->dateCreated

@@ -1,0 +1,236 @@
+<!--##session pdfcss##-->
+
+body {
+	background-color: inherit; /* background color */
+	font-family: <!--##=PdfFont()##-->; /* font name */
+	font-size: xx-small; /* font size - DO NOT CHANGE! */
+}
+
+/* table for PDF export */
+.ewTable {
+	border: 0;
+	border-spacing: 0;
+	border-collapse: separate;
+	font-size: xx-small; /* font size - DO NOT CHANGE! */
+	width: 100%;
+	border-top: 0.5px solid;
+	border-left: 0.5px solid;
+	border-color: <!--##=PdfBorderColor(PROJ.GetV("ThemeGridLineColor"))##-->;  /* border color */
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.ewTable td, .ewTable th {
+	padding: 3px; /* cell padding */
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0.5px solid; /* border width, vertical grid line */
+	border-bottom: 0.5px solid; /* border width, horizontal grid line */
+	border-color: <!--##=PdfBorderColor(PROJ.GetV("ThemeGridLineColor"))##-->;  /* border color */
+}
+
+.ewTable .ewTableHeader td, .ewTable .ewTableHeader th {
+	background-image: none; /* remove header bg image */
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeTableHeaderBackColor"))##-->;	/* header bgcolor */
+	color: <!--##=PdfColor(PROJ.GetV("ThemeTableHeaderTextColor"))##-->; /* header font color */
+	vertical-align: top;
+}
+
+/* row color */
+.ewTable .ewTableRow, .ewTable .ewTableRow td {
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeTableBodyRowColor"))##-->;  /* alt row color 1 */
+<!--## if (ew_IsNotEmpty(PROJ.GetV("ThemeTableBodyRowTextColor"))) { ##-->
+	color: <!--##=PdfColor(PROJ.GetV("ThemeTableBodyRowTextColor"))##-->;
+<!--## } ##-->
+}
+
+/* alternate row color */
+.ewTable .ewTableAltRow, .ewTable .ewTableAltRow td {
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeTableBodyAlternatingRowColor"))##-->; /* alt row color 2 */
+<!--## if (ew_IsNotEmpty(PROJ.GetV("ThemeTableBodyAlternatingRowTextColor"))) { ##-->
+	color: <!--##=PdfColor(PROJ.GetV("ThemeTableBodyAlternatingRowTextColor"))##-->;
+<!--## } ##-->
+}
+
+/* crosstab column row */
+.ewTable .ewTableColumnRow {
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeTableBodyAlternatingRowColor"))##-->; /* alt row color 2 */
+<!--## if (ew_IsNotEmpty(PROJ.GetV("ThemeTableBodyAlternatingRowTextColor"))) { ##-->
+	color: <!--##=PdfColor(PROJ.GetV("ThemeTableBodyAlternatingRowTextColor"))##-->;
+<!--## } ##-->
+}
+
+/* group 1 */
+.ewTable .ewRptGrpHeader1 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpTextColor1"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor1"))##-->;
+	border-bottom: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */
+	border-right: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */	
+	font-weight: bold;		
+}
+
+.ewRptGrpHeader1 a:link, .ewRptGrpHeader1 a:active, .ewRptGrpHeader1 a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+.ewRptGrpField1 {
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor1"))##-->;	
+}
+
+.ewRptGrpSummary1 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpSummaryTextColor1"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpSummaryColor1"))##-->;	
+}
+
+/* group 2 */
+.ewTable .ewRptGrpHeader2 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpTextColor2"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor2"))##-->;
+	border-bottom: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */
+	border-right: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */	
+	font-weight: bold;
+}
+
+.ewRptGrpHeader2 a:link, .ewRptGrpHeader2 a:active, .ewRptGrpHeader2 a:visited {
+//	color: inherit;
+	text-decoration: none;
+}
+
+.ewRptGrpField2 {
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor2"))##-->;
+}
+
+.ewRptGrpSummary2 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpSummaryTextColor2"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpSummaryColor2"))##-->;	
+} 
+
+/* group 3 */
+.ewTable .ewRptGrpHeader3 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpTextColor3"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor3"))##-->;
+	border-bottom: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */
+	border-right: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */	
+	font-weight: bold;
+}
+
+.ewRptGrpHeader3 a:link, .ewRptGrpHeader3 a:active, .ewRptGrpHeader3 a:visited {
+//	color: inherit;
+	text-decoration: none;
+}
+
+.ewRptGrpField3 {
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor3"))##-->;
+}
+
+.ewRptGrpSummary3 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpSummaryTextColor3"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpSummaryColor3"))##-->;	
+}
+
+/* group 4 */
+.ewTable .ewRptGrpHeader4 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpTextColor4"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor4"))##-->;
+	border-bottom: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */
+	border-right: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */	
+	font-weight: bold;
+}
+
+.ewRptGrpHeader4 a:link, .ewRptGrpHeader4 a:active, .ewRptGrpHeader4 a:visited {
+//	color: inherit;
+	text-decoration: none;
+}
+
+.ewRptGrpField4 {
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor4"))##-->;
+}
+
+.ewRptGrpSummary4 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpSummaryTextColor4"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpSummaryColor4"))##-->;	
+}
+
+/* group 5 */
+.ewTable .ewRptGrpHeader5 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpTextColor5"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor5"))##-->;
+	border-bottom: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */
+	border-right: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */	
+	font-weight: bold;
+}
+
+.ewRptGrpHeader5 a:link, .ewRptGrpHeader5 a:active, .ewRptGrpHeader5 a:visited {
+//	color: inherit;
+	text-decoration: none;
+}
+
+.ewRptGrpField5 {
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor5"))##-->;
+}
+
+.ewRptGrpSummary5 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpSummaryTextColor5"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpSummaryColor5"))##-->;	
+}
+
+/* group 6 */
+.ewTable .ewRptGrpHeader6 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpTextColor6"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor6"))##-->;
+	border-bottom: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */
+	border-right: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */	
+	font-weight: bold;
+}
+
+.ewRptGrpHeader6 a:link, .ewRptGrpHeader6 a:active, .ewRptGrpHeader6 a:visited {
+//	color: inherit;
+	text-decoration: none;
+}
+
+.ewRptGrpField6 {
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpColor6"))##-->;
+}
+
+.ewRptGrpSummary6 {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrpSummaryTextColor6"))##-->;
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrpSummaryColor6"))##-->;	
+}
+
+.ewRptGrpAggregate {
+	font-weight: bold;
+}
+
+.ewRptPageSummary {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptPageSummaryTextColor"))##-->; /* page summary text color */	
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptPageSummaryColor"))##-->; /* page total background color */	
+}
+
+.ewRptGrandSummary {
+	color: <!--##=PdfColor(PROJ.GetV("ThemeRptGrandSummaryTextColor"))##-->; /* grand summary text color */
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeRptGrandSummaryColor"))##-->; /* grand summary background color */	
+}
+
+/* for crosstab report only */
+
+.ewRptColHeaderRow td {
+	border-bottom: <!--##=PROJ.GetV("ThemeGridLineWidth")##-->px solid; /* header border width */
+}
+
+.ewRptColSummary {
+	background-color: <!--##=ew_CssInherit(PROJ.GetV("ThemeTableHeaderBackColor"))##-->;  /* column summary */
+	color: <!--##=ew_CssInherit(PROJ.GetV("ThemeTableHeaderTextColor"))##-->;
+}
+
+.ewRptColHeader {
+	background-color: <!--##=PdfBgColor(PROJ.GetV("ThemeTableHeaderBackColor"))##-->; /* column heading background color */
+	color: <!--##=PdfColor(PROJ.GetV("ThemeTableHeaderTextColor"))##-->; /* column heading text color */
+}
+
+/* export page break */
+.ewPageBreak {
+	page-break-before: always;
+}
+
+<!--##/session##-->
